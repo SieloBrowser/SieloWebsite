@@ -17,8 +17,8 @@ $router->get('/user/view/:name', function ($name) { $name = str_replace('-', ' '
 /*
  * Register
  */
-$router->get('/user/register', function () { $userAccount = new \Application\Site\Controller\User();$userAccount->invokeRegisterPage(); });
-$router->post('user/register', function() { print_r($_POST); });
+$router->get('/user/register', function () { $userController = new \Application\Site\Controller\User();$userController->invokeRegisterPage(); });
+$router->post('/user/register', function() { $userController = new Application\Site\Controller\User();$userController->createAccount($_POST); });
 /*
  * Login
  */

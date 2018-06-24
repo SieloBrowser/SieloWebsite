@@ -21,6 +21,11 @@ class User extends BaseController
 		$this->setLang('en', 'User/page', 'Site');
 	}
 
+	public function createAccount($infos)
+	{
+		$this->model->createAccount($infos['name'], $infos['surname'], $infos['pseudo'], $infos['password'], $infos['confirm'], $infos['email']);
+	}
+
 	public function invokeLoginPage()
 	{
 

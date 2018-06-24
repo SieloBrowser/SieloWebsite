@@ -1,4 +1,4 @@
-<div class="login">
+<div class="register">
 
 	<form action="register" method="post" style="text-align: center">
 		<label>

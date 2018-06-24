@@ -15,7 +15,7 @@ class ThemeGallery extends BaseController {
 	public function __construct()
 	{
 		parent::__construct('ThemeGallery', 'Site');
-		$this->setLang('en', 'Theme/gallery', 'Site');
+		$this->setLang('en', 'Theme', 'Site');
 	}
 
 	public function invokeListing()

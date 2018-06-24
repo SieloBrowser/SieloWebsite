@@ -24,11 +24,23 @@ class User extends BaseController
 	public function invokeLoginPage()
 	{
 
+		if($this->model->isConnected())
+		{
+			echo 'already connected';
+		} else {
+			$this->render('User/login');
+		}
+
 	}
 
 	public function invokeRegisterPage()
 	{
-
+		if($this->model->isConnected())
+		{
+			echo 'already connected';
+		} else {
+			$this->render('User/register');
+		}
 	}
 
 	public function invokeAccountPage()
@@ -45,7 +57,7 @@ class User extends BaseController
 			$this->setParams($account[0], 'account');
 			$this->setParams($this->lang, 'lang');
 			$this->htmlDocument->header->addMetaTag(['name' => 'testMeta']);
-			$this->htmlDocument->header->setTitle($this->lang->getKey('CONNECTION_PAGE_TITLE').' '.$name);
+			$this->htmlDocument->header->setTitle($this->lang->getKey('ACCOUNT_PAGE_TITLE').' '.$name);
 			$this->render('User/page');
 		} else {
 			$this->setParams($this->lang, 'lang');

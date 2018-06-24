@@ -8,12 +8,14 @@
 
 namespace Core\MVC;
 
+use Core\Cache\Cache;
 use Core\Language\Lang;
 use Core\Html\Document;
 
 class BaseController
 {
 	protected $model;
+	protected $cache;
 	protected $lang;
 	protected $htmlDocument;
 	private $params = [];
@@ -24,6 +26,7 @@ class BaseController
 	public function __construct($modelName, $type)
 	{
 		$this->model = $this->getModel($modelName, $type);
+		$this->cache = new Cache($type);
 		$this->htmlDocument = Document::getInstance();
 		$this->type = $type;
 	}
@@ -57,12 +60,21 @@ class BaseController
 
 	public function render($viewName)
 	{
-		ob_start();
-		$this->params;
-		$this->htmlDocument;
-		require $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$viewName.'.php';
-		$content = ob_get_clean();
-		require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
+		if($this->cache->isExpired($viewName) === false)
+		{
+			$this->cache->get($viewName);
+		} else {
+			ob_start();
+			$this->params;
+			$this->htmlDocument;
+			require $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$viewName.'.php';
+			$includedContent = ob_get_clean();
+			require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
+			$content = ob_get_contents();
+			ob_end_clean();
+			$this->cache->add($viewName, $content);
+			echo $content;
+		}
 	}
 
 }

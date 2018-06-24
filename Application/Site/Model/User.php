@@ -26,11 +26,19 @@ class User extends BaseModel
 
 	public function createAccount($name, $surname, $pseudo, $password, $confirm, $email)
 	{
-		if($password === $confirm && $this->accountExists($pseudo, $email) === false)
+		if($password === $confirm)
 		{
-			$this->db->insert('`user`')->column(['name', 'surname', 'pseudo', 'password', 'email'])->values([':name', ':pseudo', ':password', ':email']);
-			$this->db->appendParameters([':name' => $name, ':surname' => $surname, ':pseudo' => $pseudo, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email]);
-			$this->db->execute();
+			if($this->accountExists($pseudo, $email) === false)
+			{
+				$this->db->insert('`user`')->column(['name', 'surname', 'pseudo', 'password', 'email'])->values([':name', ':surname', ':pseudo', ':password', ':email']);
+				$this->db->appendParameters([':name' => $name, ':surname' => $surname, ':pseudo' => $pseudo, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email]);
+				$this->db->execute();
+				return 'Done';
+			} else {
+				return 'Already exists';
+			}
+		} else {
+			return 'Password does not match';
 		}
 	}
 
@@ -80,9 +88,22 @@ class User extends BaseModel
 		return isset($_SESSION);
 	}
 
-	public function login($name, $mdp)
+	public function login($pseudo, $password)
 	{
+		if($pseudo && $password)
+		{
+			$this->db->select('*')->from('`user`')->execute();
+			$accounts = $this->db->loadObjectList();
+			foreach ($accounts as $account)
+			{
+				if($pseudo === $account->pseudo && password_verify($password, $account->password))
+				{
+					$this->startSession($account);
+				}
+			}
+		} else {
 
+		}
 	}
 
 	public function disconnect()
@@ -97,17 +118,31 @@ class User extends BaseModel
 
 	private function startSession()
 	{
-
+		session_start();
+		$_SESSION['lang'] = 'en';
 	}
 
 	private function disconnectSession()
 	{
-
+		session_destroy();
 	}
 
 	public function setSessionParams($param)
 	{
 
+	}
+
+	static function sessionStarted()
+	{
+		return session_status() === PHP_SESSION_ACTIVE;
+	}
+
+	static function getSessionParam($paramName)
+	{
+		if(self::sessionStarted())
+		{
+
+		}
 	}
 
 }

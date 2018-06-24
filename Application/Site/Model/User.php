@@ -77,7 +77,7 @@ class User extends BaseModel
 
 	public function isConnected()
 	{
-
+		return isset($_SESSION);
 	}
 
 	public function login($name, $mdp)

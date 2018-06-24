@@ -20,14 +20,14 @@ class Cache
 
 	}
 
-	public function add($file, $content)
+	public function add($fileName, $content)
 	{
-		file_put_contents($this->cachePath.$file.'.html', $content);
+		file_put_contents($this->cachePath.$fileName.'.html', $content);
 	}
 
 	public function delete($fileName)
 	{
-
+		unlink($this->cachePath.$fileName.'.html');
 	}
 
 	public function isExpired($fileName)

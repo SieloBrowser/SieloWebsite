@@ -1,5 +1,15 @@
 <div class="register">
 
+    <?php
+        if(isset($this->params['returnError']))
+        {
+            ?>
+                <div class="error" style="text-align: center">
+                    <?php echo $this->params['returnError']; ?>
+                </div>
+            <?php
+        }
+    ?>
 	<form action="register" method="post" style="text-align: center">
 		<label>
 			<h4>Pseudo</h4>

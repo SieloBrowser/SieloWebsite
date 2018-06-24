@@ -1,2 +1,4 @@
 # Idea file
 .idea
+# Cache files
+Application/Site/Cache/*

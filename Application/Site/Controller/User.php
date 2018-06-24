@@ -18,12 +18,32 @@ class User extends BaseController
 	public function __construct()
 	{
 		parent::__construct('User', 'Site');
-		$this->setLang('en', 'User/page', 'Site');
+		$this->setLang('en', 'User', 'Site');
 	}
 
 	public function createAccount($infos)
 	{
-		$this->model->createAccount($infos['name'], $infos['surname'], $infos['pseudo'], $infos['password'], $infos['confirm'], $infos['email']);
+		$accountReturn = $this->model->createAccount($infos['name'], $infos['surname'], $infos['pseudo'], $infos['password'], $infos['confirm'], $infos['email']);
+
+		$renderPage = 'User/register';
+		if($accountReturn === 'Done')
+		{
+			$this->setParams($this->model->getAccount($infos['name']), 'account');
+			$renderPage = 'User/page';
+		} else if($accountReturn === 'Already exists' )
+		{
+			$this->setParams($this->lang->getKey('ERROR_ACCOUNT_ALREADY_EXISTS'), 'returnError');
+		} else if($accountReturn === 'Password does not match')
+		{
+			$this->setParams($this->lang->getKey('ERROR_PASSWORD_DOES_NOT_MATCH_CONFIRM'), 'returnError');
+		}
+		$this->setParams($this->lang, 'lang');
+		$this->render($renderPage);
+	}
+
+	public function login($infos)
+	{
+		$accountReturn = $this->model->login($infos['pseudo'], $infos['password']);
 	}
 
 	public function invokeLoginPage()
@@ -44,6 +64,7 @@ class User extends BaseController
 		{
 			echo 'already connected';
 		} else {
+			$this->setParams($this->lang, 'lang');
 			$this->render('User/register');
 		}
 	}

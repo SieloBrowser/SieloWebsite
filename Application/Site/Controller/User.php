@@ -43,6 +43,7 @@ class User extends BaseController
 
 	public function login($infos)
 	{
+		$this->useCache(false);
 		$accountReturn = $this->model->login($infos['pseudo'], $infos['password']);
 	}
 
@@ -76,7 +77,7 @@ class User extends BaseController
 
 	public function invokeViewAccountPage($name)
 	{
-
+		$this->useCache(false);
 		$account = $this->model->getAccount($name);
 		if(count($account) !== 0)
 		{

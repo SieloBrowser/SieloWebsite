@@ -9,22 +9,60 @@
 namespace Core\MVC;
 
 use Core\Cache\Cache;
+use Core\Emitter\Emitter;
 use Core\Language\Lang;
 use Core\Html\Document;
 
 class BaseController
 {
+	/**
+	 * @var BaseModel mixed
+	 */
 	protected $model;
+	/**
+	 * @var Cache Cache
+	 */
 	protected $cache;
+	/**
+	 * @var Lang
+	 */
 	protected $lang;
+	/**
+	 * @var Emitter
+	 */
+	protected $emitter;
+	/**
+	 * @var Document
+	 */
 	protected $htmlDocument;
+	/**
+	 * @var array
+	 */
 	private $params = [];
+	/**
+	 * @var string
+	 */
 	private $type;
+	/**
+	 * @var string
+	 */
 	private $defaultView = 'Default/default';
+	/**
+	 * @var string
+	 */
 	private $defaultlang = 'fr';
+	/**
+	 * @var bool
+	 */
 	private $cacheActive = true;
 
-	public function __construct($modelName, $type)
+	/**
+	 * BaseController constructor.
+	 *
+	 * @param string $modelName
+	 * @param string $type
+	 */
+	public function __construct(string $modelName, string $type)
 	{
 		$this->model = $this->getModel($modelName, $type);
 		$this->cache = new Cache($type);
@@ -32,24 +70,43 @@ class BaseController
 		$this->type = $type;
 	}
 
-	public function setLang($lang, $langFileName, $sitePart)
+	/**
+	 * @param string $lang
+	 * @param string $langFileName
+	 * @param string $sitePart
+	 */
+	public function setLang(string $lang, string $langFileName, string $sitePart)
 	{
 		$this->lang = new Lang((isset($lang)) ? $lang : $this->defaultlang, $langFileName, $sitePart);
 	}
 
-	private function getModel($modelName, $type)
+	/**
+	 * @param string $modelName
+	 * @param string $type
+	 *
+	 * @return mixed
+	 */
+	private function getModel(string $modelName, string $type)
 	{
 		$modelPath = 'Application\\'.$type.'\\Model\\'.$modelName;
 
 		return new $modelPath();
 	}
 
+	/**
+	 * @param bool $param
+	 */
 	protected function useCache(bool $param = true)
 	{
 		$this->cacheActive = $param;
 	}
 
-	public function setParams($param, $name = null)
+
+	/**
+	 * @param mixed       $param
+	 * @param string|null $name
+	 */
+	public function setParams($param, string $name = null)
 	{
 		if(is_array($param) && is_array($name))
 		{
@@ -64,7 +121,10 @@ class BaseController
 		}
 	}
 
-	public function render($viewName)
+	/**
+	 * @param string $viewName
+	 */
+	public function render(string $viewName)
 	{
 		if($this->cache->isExpired($viewName) === false && $this->cacheActive === true)
 		{

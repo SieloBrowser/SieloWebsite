@@ -14,8 +14,14 @@ use Core\MVC\BaseModel;
 class User extends BaseModel
 {
 
+	/**
+	 * @var array
+	 */
 	private $_sessionParams = [];
 
+	/**
+	 * User constructor.
+	 */
 	public function __construct()
 	{
 
@@ -24,7 +30,18 @@ class User extends BaseModel
 
 	}
 
-	public function createAccount($name, $surname, $pseudo, $password, $confirm, $email)
+	/**
+	 * @param string $name
+	 * @param string $surname
+	 * @param string $pseudo
+	 * @param string $password
+	 * @param string $confirm
+	 * @param string $email
+	 *
+	 * @return string
+	 * @throws \Exception
+	 */
+	public function createAccount(string $name, string $surname, string $pseudo, string $password, string $confirm, string $email)
 	{
 		if($password === $confirm)
 		{
@@ -42,7 +59,11 @@ class User extends BaseModel
 		}
 	}
 
-	public function deleteAccount($name, $confirm)
+	/**
+	 * @param string $name
+	 * @param string $confirm
+	 */
+	public function deleteAccount(string $name, string $confirm)
 	{
 		$this->db->select('*')->from('`user`')->execute();
 		$accounts = $this->db->loadObjectList();
@@ -54,6 +75,11 @@ class User extends BaseModel
 		}
 	}
 
+	/**
+	 * @param string $name
+	 *
+	 * @return mixed
+	 */
 	public function getAccount($name)
 	{
 		if($name)
@@ -64,6 +90,13 @@ class User extends BaseModel
 		}
 	}
 
+	/**
+	 * @param string $pseudo
+	 * @param string $email
+	 *
+	 * @return bool
+	 * @throws \Exception
+	 */
 	public function accountExists($pseudo, $email)
 	{
 		if($pseudo && $email)
@@ -83,11 +116,18 @@ class User extends BaseModel
 		}
 	}
 
+	/**
+	 * @return string bool
+	 */
 	public function isConnected()
 	{
 		return isset($_SESSION);
 	}
 
+	/**
+	 * @param string $pseudo
+	 * @param string $password
+	 */
 	public function login($pseudo, $password)
 	{
 		if($pseudo && $password)
@@ -106,37 +146,59 @@ class User extends BaseModel
 		}
 	}
 
+	/**
+	 *
+	 */
 	public function disconnect()
 	{
 
 	}
 
+	/**
+	 * @param $info
+	 * @param $value
+	 */
 	public function changeInformation($info, $value)
 	{
 
 	}
 
+	/**
+	 *
+	 */
 	private function startSession()
 	{
 		session_start();
 		$_SESSION['lang'] = 'en';
 	}
 
+	/**
+	 *
+	 */
 	private function disconnectSession()
 	{
 		session_destroy();
 	}
 
+	/**
+	 * @param $param
+	 */
 	public function setSessionParams($param)
 	{
 
 	}
 
+	/**
+	 * @return bool
+	 */
 	static function sessionStarted()
 	{
 		return session_status() === PHP_SESSION_ACTIVE;
 	}
 
+	/**
+	 * @param $paramName
+	 */
 	static function getSessionParam($paramName)
 	{
 		if(self::sessionStarted())

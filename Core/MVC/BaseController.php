@@ -22,6 +22,7 @@ class BaseController
 	private $type;
 	private $defaultView = 'Default/default';
 	private $defaultlang = 'fr';
+	private $cacheActive = true;
 
 	public function __construct($modelName, $type)
 	{
@@ -43,6 +44,11 @@ class BaseController
 		return new $modelPath();
 	}
 
+	protected function useCache(bool $param = true)
+	{
+		$this->cacheActive = $param;
+	}
+
 	public function setParams($param, $name = null)
 	{
 		if(is_array($param) && is_array($name))
@@ -60,7 +66,7 @@ class BaseController
 
 	public function render($viewName)
 	{
-		if($this->cache->isExpired($viewName) === false)
+		if($this->cache->isExpired($viewName) === false && $this->cacheActive === true)
 		{
 			$this->cache->get($viewName);
 		} else {
@@ -72,7 +78,8 @@ class BaseController
 			require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
 			$content = ob_get_contents();
 			ob_end_clean();
-			$this->cache->add($viewName, $content);
+			if($this->cacheActive === true)
+				$this->cache->add($viewName, $content);
 			echo $content;
 		}
 	}

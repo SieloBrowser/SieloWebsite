@@ -2,8 +2,9 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/Autoloader.php';
 
-$router = new \Core\UrlRouter\Router($_GET['url']);
+$router = new \Core\UrlRouter\Router((isset($_GET['url'])) ? $_GET['url'] : '');
 
+$router->get('/', function () { echo 'ok'; });
 /*
  * Theme listing
  */

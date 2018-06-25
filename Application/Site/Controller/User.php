@@ -13,14 +13,23 @@ use Core\MVC\BaseController;
 
 class User extends BaseController
 {
+	/**
+	 * @var
+	 */
 	protected $lang;
 
+	/**
+	 * User constructor.
+	 */
 	public function __construct()
 	{
 		parent::__construct('User', 'Site');
 		$this->setLang('en', 'User', 'Site');
 	}
 
+	/**
+	 * @param array $infos
+	 */
 	public function createAccount($infos)
 	{
 		$accountReturn = $this->model->createAccount($infos['name'], $infos['surname'], $infos['pseudo'], $infos['password'], $infos['confirm'], $infos['email']);
@@ -41,12 +50,18 @@ class User extends BaseController
 		$this->render($renderPage);
 	}
 
+	/**
+	 * @param $infos
+	 */
 	public function login($infos)
 	{
 		$this->useCache(false);
 		$accountReturn = $this->model->login($infos['pseudo'], $infos['password']);
 	}
 
+	/**
+	 *
+	 */
 	public function invokeLoginPage()
 	{
 
@@ -59,6 +74,9 @@ class User extends BaseController
 
 	}
 
+	/**
+	 *
+	 */
 	public function invokeRegisterPage()
 	{
 		if($this->model->isConnected())
@@ -70,11 +88,17 @@ class User extends BaseController
 		}
 	}
 
+	/**
+	 *
+	 */
 	public function invokeAccountPage()
 	{
 
 	}
 
+	/**
+	 * @param $name
+	 */
 	public function invokeViewAccountPage($name)
 	{
 		$this->useCache(false);

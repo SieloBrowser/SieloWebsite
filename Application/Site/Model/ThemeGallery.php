@@ -14,11 +14,17 @@ use Core\MVC\BaseModel;
 class ThemeGallery extends BaseModel
 {
 
+	/**
+	 * ThemeGallery constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 		$this->db = $this->getDb();
 	}
 
+	/**
+	 * @return mixed
+	 */
 	public function getThemes()
 	{
 		$this->db->select('*')->from('`themes`');
@@ -26,6 +32,11 @@ class ThemeGallery extends BaseModel
 		return $this->db->loadObjectList();
 	}
 
+	/**
+	 * @param string $name
+	 *
+	 * @return array
+	 */
 	public function getTheme($name)
 	{
 		$this->db->select('*')->from('`themes`')->where('`name` = \''.$name.'\'')->execute();

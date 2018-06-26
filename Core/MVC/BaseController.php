@@ -68,6 +68,7 @@ class BaseController
 		$this->cache = new Cache($type);
 		$this->htmlDocument = Document::getInstance();
 		$this->type = $type;
+		$this->emitter = Emitter::getInstance();
 	}
 
 	/**

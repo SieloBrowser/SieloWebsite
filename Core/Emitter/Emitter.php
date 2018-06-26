@@ -11,58 +11,111 @@ namespace Core\Emitter;
 class Emitter
 {
 
-	private $events = [];
+	/**
+	 * @var
+	 */
+	private static $_instance;
+	/**
+	 * @var Listener[][]
+	 */
+	private $listeners = [];
 
 	/**
-	 * Emitter constructor.
+	 * @return Emitter
 	 */
-	public function __construct()
+	public static function getInstance(): Emitter
 	{
 
+		if(!isset(self::$_instance))
+		{
+			self::$_instance = new Emitter();
+		}
 
-
+		return self::$_instance;
 	}
 
 	/**
-	 * @param string|array $typeName
+	 * @param string $event
+	 * @param mixed  ...$args
 	 */
-	public function addType($typeName)
+	public function emit(string $event, ...$args)
 	{
-		if(is_array($typeName))
-			foreach ($typeName as $type)
+		if($this->hasListener($event))
+		{
+			foreach ($this->listeners[$event] as $listener)
 			{
-				$this->events[$type] = [];
+				$listener->handle($args);
+				if($listener->stopPropagation)
+				{
+					break;
+				}
 			}
-		else
-			$this->events[$typeName] = [];
+		}
 	}
 
 	/**
-	 * @param string $eventName
-	 * @param string $eventType
-	 * @param $callback
-	 */
-	public function addEvent(string $eventName, $eventType, $callback)
-	{
-
-
-
-	}
-
-	/**
+	 * @param string   $event
+	 * @param callable $callable
+	 * @param int $priority
 	 *
+	 * @return Listener
 	 */
-	public function deleteEvent()
+	public function on(string $event, callable $callable, int $priority = 0) : Listener
 	{
+		if(!$this->hasListener($event))
+		{
+			$this->listeners[$event] = [];
+		}
+		$this->callableExistsForEvent($event, $callable);
+		$listener = new Listener($callable, $priority);
+		$this->listeners[$event][] = $listener;
+		$this->sortListeners($event);
+		return $listener;
+	}
+
+	/**
+	 * @param string   $event
+	 * @param callable $callable
+	 * @param int      $priority
+	 *
+	 * @return Listener
+	 */
+	public function once(string $event, callable $callable, int $priority = 0) : Listener
+	{
+
+		return $this->on($event, $callable, $priority)->once();
 
 	}
 
 	/**
-	 * @param string $eventName
+	 * @param string $event
+	 *
+	 * @return bool
 	 */
-	public function callEvent(string $eventName)
-	{
-
+	private function hasListener(string $event): bool {
+		return array_key_exists($event, $this->listeners);
 	}
 
+	/**
+	 * @param $event
+	 */
+	private function sortListeners($event)
+	{
+		uasort($this->listeners[$event], function($a, $b) {
+			return $a->priority < $b->priority;
+		});
+	}
+
+	private function callableExistsForEvent(string $event, callable $callback): bool
+	{
+
+		foreach ($this->listeners[$event] as $listener)
+		{
+			if($listener->callback === $callback)
+			{
+				throw new EventException();
+			}
+		}
+		return false;
+	}
 }

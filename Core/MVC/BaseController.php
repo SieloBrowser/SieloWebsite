@@ -89,9 +89,14 @@ class BaseController
 	 */
 	private function getModel(string $modelName, string $type)
 	{
-		$modelPath = 'Application\\'.$type.'\\Model\\'.$modelName;
+		if($modelName && $type)
+		{
+			$modelPath = 'Application\\'.$type.'\\Model\\'.$modelName;
 
-		return new $modelPath();
+			return new $modelPath();
+		} else {
+			return null;
+		}
 	}
 
 	/**
@@ -125,22 +130,24 @@ class BaseController
 	/**
 	 * @param string $viewName
 	 */
-	public function render(string $viewName)
+	public function render(string $viewName, $cacheName = '')
 	{
-		if($this->cache->isExpired($viewName) === false && $this->cacheActive === true)
+		if($this->cache->isExpired($viewName.$cacheName) === false && $this->cacheActive === true)
 		{
-			$this->cache->get($viewName);
+			$this->cache->get($viewName.$cacheName);
 		} else {
 			ob_start();
 			$this->params;
 			$this->htmlDocument;
 			require $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$viewName.'.php';
-			$includedContent = ob_get_clean();
+			$includedContent = ob_get_contents();
+			ob_end_clean();
+			ob_start();
 			require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
 			$content = ob_get_contents();
 			ob_end_clean();
 			if($this->cacheActive === true)
-				$this->cache->add($viewName, $content);
+				$this->cache->add($viewName.$cacheName, $content);
 			echo $content;
 		}
 	}

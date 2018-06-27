@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed1f6039-ded8-48f7-87b3-c563c2d4a457" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ed1f6039-ded8-48f7-87b3-c563c2d4a457" name="Default" comment="Add login view">
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/ie8.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/ie9.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/images/_overlay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/images/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/images/ie/banner-overlay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/__tabs-space.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/fbutton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/floating-button.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/official-sielo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/tabs-space.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/tabsspaces.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/themes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/compile/win_cmake.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/themes/addressbar-details.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/themes/floating-button-details.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/themes/interface-names.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/themes/tabs-details.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/themes/tabs-details2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/images/wiki/themes/temps.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/ie/PIE.htc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/ie/html5shiv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/ie/respond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/jquery.dropotron.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/jquery.scrollex.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/jquery.scrolly.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/skel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/js/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/ie8.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/ie9.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/libs/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/libs/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/libs/_skel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/libs/_vars.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Assets/sass/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/Datas/User/Kaktus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Site/View/User/join.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Site/Langs/en/User.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Site/Langs/en/User.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Site/Langs/fr/User.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Site/Langs/fr/User.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Site/View/Default/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Site/View/Default/default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,56 +77,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Site/Controller/User.php">
+      <file leaf-file-name="account.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Site/View/User/account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
+            <state relative-caret-position="986">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Site/View/Default/default.php">
+      <file leaf-file-name="User.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Site/Langs/fr/User.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            <state relative-caret-position="51">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lang.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/Language/Lang.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Site/View/User/page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Register.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/Autoloader/Register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Site/View/Home/home.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Site/Controller/Home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Site/Langs/en/User.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Core/MVC/BaseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1258">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
+              <folding>
+                <element signature="e#110#131#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/site/fr/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="88" column="16" selection-start-line="77" selection-start-column="6" selection-end-line="88" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -88,7 +157,17 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>accountExists</find>
+      <find>handle</find>
+      <find>emitter</find>
+      <find>../assets/</find>
+      <find>Gratuit</find>
+      <find>cache</find>
+      <find>'</find>
+      <find>../</find>
     </findStrings>
+    <replaceStrings>
+      <replace>/Sielo/Application/Site/Assets/</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,34 +175,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/0f8f9a27-9c20-4a0a-9f22-5efda2a3c661/console.sql" />
-        <option value="$PROJECT_DIR$/Application/Autoloader.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/Application/Site/View/Theme/ListingView.php" />
-        <option value="$PROJECT_DIR$/Core/MVC/BaseModel.php" />
-        <option value="$PROJECT_DIR$/Application/Site/View/Theme/OtherListing.php" />
-        <option value="$PROJECT_DIR$/Core/Database/config.php" />
-        <option value="$PROJECT_DIR$/Core/Database/DatabaseException.php" />
-        <option value="$PROJECT_DIR$/Core/Database/Connector.php" />
-        <option value="$PROJECT_DIR$/Application/Site/View/Theme/Listing.php" />
-        <option value="$PROJECT_DIR$/Application/Site/View/Theme/listing.php" />
-        <option value="$PROJECT_DIR$/Core/Langage/Parser.php" />
-        <option value="$PROJECT_DIR$/Core/Langage/LangLoader.php" />
-        <option value="$PROJECT_DIR$/Core/Langage/LangException.php" />
-        <option value="$PROJECT_DIR$/Core/Langage/Lang.php" />
-        <option value="$PROJECT_DIR$/Core/Language/LangLoader.php" />
-        <option value="$PROJECT_DIR$/Core/Language/LangException.php" />
-        <option value="$PROJECT_DIR$/Core/Language/LangParser.php" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/fr/themegallery.txt" />
         <option value="$PROJECT_DIR$/Application/Site/View/default.php" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/en/themegallery.txt" />
         <option value="$PROJECT_DIR$/Core/User/User.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/Core/Database/QueryBuilder.php" />
         <option value="$PROJECT_DIR$/Application/Site/Model/ThemeCreater.php" />
         <option value="$PROJECT_DIR$/Application/Site/Model/ThemeCreator.php" />
-        <option value="$PROJECT_DIR$/Application/Site/Model/ThemeGallery.php" />
-        <option value="$PROJECT_DIR$/Application/Site/Controller/ThemeGallery.php" />
         <option value="$PROJECT_DIR$/Application/Site/View/Theme/page.php" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/fr/User/page.txt" />
         <option value="$PROJECT_DIR$/Application/Site/View/User/404.php" />
@@ -132,21 +189,43 @@
         <option value="$PROJECT_DIR$/Application/Site/Langs/en/Theme/gallery.ini" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/fr/default.ini" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/fr/Theme/gallery.ini" />
-        <option value="$PROJECT_DIR$/Application/Site/Model/User.php" />
         <option value="$PROJECT_DIR$/Core/Html/Head.php" />
-        <option value="$PROJECT_DIR$/Core/Html/Body.php" />
         <option value="$PROJECT_DIR$/Core/Html/Document.php" />
-        <option value="$PROJECT_DIR$/Core/MVC/BaseController.php" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/en/default.ini" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/fr/User/page.ini" />
         <option value="$PROJECT_DIR$/Core/Html/Header.php" />
-        <option value="$PROJECT_DIR$/Application/Site/View/Default/default.php" />
-        <option value="$PROJECT_DIR$/Application/Site/Controller/User.php" />
         <option value="$PROJECT_DIR$/Application/Site/Langs/en/User/page.ini" />
-        <option value="$PROJECT_DIR$/Core/Language/Lang.php" />
-        <option value="$PROJECT_DIR$/Application/Site/View/User/page.php" />
         <option value="$PROJECT_DIR$/Core/Autoloader/Register.php" />
+        <option value="$PROJECT_DIR$/Core/Language/Lang.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/User/error.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Controller/ThemeGallery.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/User/register.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Core/Database/QueryBuilder.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Model/ThemeGallery.php" />
+        <option value="$PROJECT_DIR$/Core/Emitter/Exceptions.php" />
+        <option value="$PROJECT_DIR$/Core/Emitter/Exception.php" />
+        <option value="$PROJECT_DIR$/Core/Emitter/EventException.php" />
+        <option value="$PROJECT_DIR$/Core/Emitter/Listener.php" />
+        <option value="$PROJECT_DIR$/Core/Emitter/Emitter.php" />
+        <option value="$USER_HOME$/Desktop/site/fr/index.html" />
+        <option value="$PROJECT_DIR$/Core/Html/Body.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/Default/default.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/User/page.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Model/User.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/User/login.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Cache/User/account/Kaktus.html" />
+        <option value="$PROJECT_DIR$/Core/Cache/Cache.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/User/join.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Controller/User.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Langs/en/User.ini" />
+        <option value="$PROJECT_DIR$/Application/Site/View/User/account.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Langs/fr/User.ini" />
+        <option value="$PROJECT_DIR$/Application/Site/View/Default/accueil.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/Core/MVC/BaseController.php" />
+        <option value="$PROJECT_DIR$/Application/Site/Controller/Home.php" />
+        <option value="$PROJECT_DIR$/Application/Site/View/Home/home.php" />
       </list>
     </option>
   </component>
@@ -170,7 +249,9 @@
     <option name="width" value="1696" />
     <option name="height" value="1026" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -182,6 +263,128 @@
             <path>
               <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Datas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Datas" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Langs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Langs" type="462c0819:PsiDirectoryNode" />
+              <item name="en" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Langs" type="462c0819:PsiDirectoryNode" />
+              <item name="fr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Site" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Core" type="462c0819:PsiDirectoryNode" />
+              <item name="Cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Core" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Core" type="462c0819:PsiDirectoryNode" />
+              <item name="Html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sielo" type="462c0819:PsiDirectoryNode" />
+              <item name="Core" type="462c0819:PsiDirectoryNode" />
+              <item name="MVC" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sielo" type="b2602c69:ProjectViewProjectNode" />
@@ -206,15 +409,18 @@
     <property name="settings.editor.splitter.proportion" value="0.18414919" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Sielo\Application\Site\View\Home" />
+      <recent name="C:\xampp\htdocs\Sielo\Application\Site" />
+      <recent name="C:\xampp\htdocs\Sielo\Application\Site\View" />
+      <recent name="C:\xampp\htdocs\Sielo\Application\Site\Langs\fr" />
+      <recent name="C:\xampp\htdocs\Sielo\Application\Site\Langs\en" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Sielo\Application\Site\Datas\User" />
       <recent name="C:\xampp\htdocs\Sielo\Application\Site\Langs\en" />
       <recent name="C:\xampp\htdocs\Sielo" />
       <recent name="C:\Users\Admin\Desktop\Sielo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Sielo\Application\Site\View\Default" />
-      <recent name="C:\xampp\htdocs\Sielo\Application\Site\Langs\fr\Theme" />
-      <recent name="C:\xampp\htdocs\Sielo\Application\Site\Langs\en\Theme" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,37 +469,353 @@
       <workItem from="1527005591336" duration="2489000" />
       <workItem from="1528991444668" duration="1172000" />
       <workItem from="1529003050043" duration="24000" />
-      <workItem from="1529840643987" duration="720000" />
+      <workItem from="1529840643987" duration="50854000" />
+      <workItem from="1530117170644" duration="228000" />
     </task>
+    <task id="LOCAL-00001" summary="Add .gitignore">
+      <created>1529841391722</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529841391722</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add router path for register">
+      <created>1529843910268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1529843910268</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add login view">
+      <created>1529843932874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529843932874</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add router path to register page">
+      <created>1529844003741</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844003741</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add register view">
+      <created>1529844030630</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844030630</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add invokeLoginPage &amp; invokeRegisterPage in user controller">
+      <created>1529844063038</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844063038</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add isConnected function in user controller class">
+      <created>1529844088621</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844088621</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add login view">
+      <created>1529844449995</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844449995</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Minor changes">
+      <created>1529844470059</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844470059</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add login path for router">
+      <created>1529844510544</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844510544</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add createAccount function in User controller">
+      <created>1529844912106</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1529844912106</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add cache render">
+      <created>1529861318675</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861318675</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add cache class">
+      <created>1529861327932</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861327932</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Minor changes">
+      <created>1529861350899</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861350899</updated>
+    </task>
+    <task id="LOCAL-00015" summary="minor changes">
+      <created>1529861376346</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861376346</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add login view &amp; login action">
+      <created>1529861402047</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861402047</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add register action">
+      <created>1529861414309</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861414309</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Moved to parent">
+      <created>1529861432860</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861432861</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Add createAccount function, login function &amp; sessionStart function">
+      <created>1529861465864</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861465864</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add createAccount action in Controller">
+      <created>1529861501483</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861501483</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Change lang file path">
+      <created>1529861520732</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861520732</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Improve gitignore">
+      <created>1529861575918</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1529861575918</updated>
+    </task>
+    <task id="LOCAL-00023" summary="[Add] =&gt; Cache system: deleteFunction">
+      <created>1529862424304</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1529862424304</updated>
+    </task>
+    <task id="LOCAL-00024" summary="[Add] =&gt; BaseController: useCache fonction &amp; private variable cacheActive">
+      <created>1529908811212</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1529908811212</updated>
+    </task>
+    <task id="LOCAL-00025" summary="[Add] =&gt; index: router base path">
+      <created>1529908852963</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1529908852963</updated>
+    </task>
+    <task id="LOCAL-00026" summary="[Add] =&gt; UserController: useCache">
+      <created>1529908890610</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1529908890610</updated>
+    </task>
+    <task id="LOCAL-00027" summary="[Add] =&gt; BaseController: PHPDoc &amp; type">
+      <created>1529910052810</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1529910052810</updated>
+    </task>
+    <task id="LOCAL-00028" summary="[Add] =&gt; ThemeGallery: PHPDoc &amp; type">
+      <created>1529910296027</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1529910296027</updated>
+    </task>
+    <task id="LOCAL-00029" summary="[Add] =&gt; UserController: PHPDoc &amp; type">
+      <created>1529910309422</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1529910309422</updated>
+    </task>
+    <task id="LOCAL-00030" summary="[Add] =&gt; UserModel: PHPDoc &amp; type">
+      <created>1529910319619</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1529910319619</updated>
+    </task>
+    <task id="LOCAL-00031" summary="[Add] =&gt; Emitter class">
+      <created>1529910338364</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1529910338364</updated>
+    </task>
+    <task id="LOCAL-00032" summary="[Add] =&gt; Emitter: Lister class">
+      <created>1529996501202</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1529996501202</updated>
+    </task>
+    <task id="LOCAL-00033" summary="[Add] =&gt; Emitter: Exception class">
+      <created>1529996514499</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1529996514500</updated>
+    </task>
+    <task id="LOCAL-00034" summary="[Add] =&gt; Emitter: Emitter class">
+      <created>1529996529358</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1529996529358</updated>
+    </task>
+    <task id="LOCAL-00035" summary="[Add] =&gt; BaseController: Emitter::getInstance() for use in all controllers">
+      <created>1529996571303</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1529996571303</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add account page with new template">
+      <created>1530117020642</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117020642</updated>
+    </task>
+    <task id="LOCAL-00037" summary="[Changes] =&gt; BaseController : model condition">
+      <created>1530117081846</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117081846</updated>
+    </task>
+    <task id="LOCAL-00038" summary="[Add] =&gt; Assets">
+      <created>1530117128706</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117128706</updated>
+    </task>
+    <task id="LOCAL-00039" summary="[Add] =&gt; UsergroupModel : get usergroups &amp; registrationDate">
+      <created>1530117273433</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117273433</updated>
+    </task>
+    <task id="LOCAL-00040" summary="[Changes] =&gt; BaseController : invokeJoinPage func">
+      <created>1530117310809</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117310809</updated>
+    </task>
+    <task id="LOCAL-00041" summary="[Delete] : user page view">
+      <created>1530117328312</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117328312</updated>
+    </task>
+    <task id="LOCAL-00042" summary="[Delete] =&gt; login page">
+      <created>1530117344892</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117344892</updated>
+    </task>
+    <task id="LOCAL-00043" summary="[Changes] =&gt; index : routes">
+      <created>1530117361536</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117361536</updated>
+    </task>
+    <task id="LOCAL-00044" summary="[Add] =&gt; home view">
+      <created>1530117386050</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117386050</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Add =&gt; Home controller">
+      <created>1530117395576</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1530117395576</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76935000" />
+    <option name="totallyTimeSpent" value="127327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19987775" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14914425" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32995495" />
       <window_info anchor="right" id="Database" order="3" weight="0.3294621" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3298969" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.21993127" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32882884" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32995495" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3298969" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32995495" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="File Transfer" order="11" weight="0.3298969" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32995495" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
     </layout>
   </component>
@@ -329,95 +851,54 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change lang file path" />
+    <MESSAGE value="Improve gitignore" />
+    <MESSAGE value="[Add] =&gt; Cache system: deleteFunction" />
+    <MESSAGE value="[Add] =&gt; BaseController: useCache fonction &amp; private variable cacheActive" />
+    <MESSAGE value="[Add] =&gt; index: router base path" />
+    <MESSAGE value="[Add] =&gt; UserController: useCache" />
+    <MESSAGE value="[Add] =&gt; BaseController: PHPDoc &amp; type" />
+    <MESSAGE value="[Add] =&gt; ThemeGallery: PHPDoc &amp; type" />
+    <MESSAGE value="[Add] =&gt; UserController: PHPDoc &amp; type" />
+    <MESSAGE value="[Add] =&gt; UserModel: PHPDoc &amp; type" />
+    <MESSAGE value="[Add] =&gt; Emitter class" />
+    <MESSAGE value="[Add] =&gt; Emitter: Lister class" />
+    <MESSAGE value="[Add] =&gt; Emitter: Exception class" />
+    <MESSAGE value="[Add] =&gt; Emitter: Emitter class" />
+    <MESSAGE value="[Add] =&gt; BaseController: Emitter::getInstance() for use in all controllers" />
+    <MESSAGE value="Add account page with new template" />
+    <MESSAGE value="[Changes] =&gt; BaseController : model condition" />
+    <MESSAGE value="[Add] =&gt; Assets" />
+    <MESSAGE value="[Add] =&gt; UsergroupModel : get usergroups &amp; registrationDate" />
+    <MESSAGE value="[Changes] =&gt; BaseController : invokeJoinPage func" />
+    <MESSAGE value="[Delete] : user page view" />
+    <MESSAGE value="[Delete] =&gt; login page" />
+    <MESSAGE value="[Changes] =&gt; index : routes" />
+    <MESSAGE value="[Add] =&gt; home view" />
+    <MESSAGE value="Add =&gt; Home controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add =&gt; Home controller" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/Route.php">
+    <entry file="file://$USER_HOME$/Desktop/site/fr/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="1496">
+          <caret line="88" column="16" lean-forward="true" selection-start-line="77" selection-start-column="6" selection-end-line="88" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/RouterException.php">
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/Home/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="493">
+          <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Minline/.htaccess" />
-    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/Route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/RouterException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/MVC/ControllerInterface.php" />
-    <entry file="file://$PROJECT_DIR$/Core/MVC/ModelInterface.php" />
-    <entry file="file://$PROJECT_DIR$/../Minline/pdesign/app/core/extension/Engine/TemplateEngine.php" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0f8f9a27-9c20-4a0a-9f22-5efda2a3c661/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/MVC/TemplateEngine.php" />
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/View/Theme/OtherListing.php" />
-    <entry file="file://$USER_HOME$/Desktop/Minline/includes/defines.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="78" lean-forward="true" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Minline/includes/framework.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-927" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Minline/libraries/joomla/database/query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9809">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/View/Theme/listing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Language/LangLoader.php" />
-    <entry file="file://$PROJECT_DIR$/Core/Language/LangParser.php" />
     <entry file="file://$PROJECT_DIR$/Core/Language/LangException.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -426,13 +907,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Core/User/User.php" />
-    <entry file="file://$PROJECT_DIR$/Core/MVC/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Core/Database/DatabaseException.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -447,20 +921,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/Model/ThemeGallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Site/View/Theme/page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -468,29 +928,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/Controller/ThemeGallery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Site/View/Theme/404.php" />
     <entry file="file://$PROJECT_DIR$/Application/Site/View/User/404.php" />
-    <entry file="file://$PROJECT_DIR$/Core/Database/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Html/Body.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Core/Html/Document.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -505,31 +944,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Database/QueryBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Site/View/Default/404.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/Langs/fr/User/page.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/MVC/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -547,52 +965,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/Langs/en/User/page.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Site/Langs/en/default.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="12" selection-start-line="1" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Language/Lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/Controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/View/Default/default.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Site/View/User/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -610,6 +986,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Database/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Core/Autoloader/Register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -617,10 +1000,215 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/Route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/UrlRouter/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Language/Lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/User/error.php" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Model/ThemeGallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Emitter/Exceptions.php" />
+    <entry file="file://$PROJECT_DIR$/Core/Emitter/EventException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Emitter/Listener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Emitter/Emitter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/MVC/BaseModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/site/thanks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Html/Body.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Database/QueryBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="91" column="51" selection-start-line="91" selection-start-column="51" selection-end-line="91" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Cache/Cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Cache/User/account/Kaktus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-859">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/Default/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/User/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="11" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/User/join.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-734">
+          <caret line="50" column="30" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Controller/ThemeGallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#128#156#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/site/en/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <caret line="121" column="13" selection-start-line="121" selection-start-column="13" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/Default/index.php" />
+    <entry file="file://$PROJECT_DIR$/Application/Site/Langs/fr/User.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Langs/en/User.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/Controller/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/MVC/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#110#131#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/site/fr/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="88" column="16" selection-start-line="77" selection-start-column="6" selection-end-line="88" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/User/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Site/View/Home/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="29" column="68" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
         </state>
       </provider>
     </entry>

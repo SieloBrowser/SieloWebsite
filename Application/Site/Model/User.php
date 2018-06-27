@@ -47,8 +47,8 @@ class User extends BaseModel
 		{
 			if($this->accountExists($pseudo, $email) === false)
 			{
-				$this->db->insert('`user`')->column(['name', 'surname', 'pseudo', 'password', 'email'])->values([':name', ':surname', ':pseudo', ':password', ':email']);
-				$this->db->appendParameters([':name' => $name, ':surname' => $surname, ':pseudo' => $pseudo, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email]);
+				$this->db->insert('`user`')->column(['name', 'surname', 'pseudo', 'password', 'email', 'registrationDate'])->values([':name', ':surname', ':pseudo', ':password', ':email', ':date']);
+				$this->db->appendParameters([':name' => $name, ':surname' => $surname, ':pseudo' => $pseudo, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email, ':date' => date('Y-m-d H:i:s')]);
 				$this->db->execute();
 				return 'Done';
 			} else {
@@ -86,6 +86,14 @@ class User extends BaseModel
 		{
 			$this->db->select('*')->from('`user`')->where('`pseudo` = \''.$name.'\'');
 			$account = $this->db->execute()->loadObjectList();
+			$this->db->select('title')->from('usergroup_map')->join('inner', 'usergroups', 'usergroups.id = usergroup_map.usergroup')->where('`user` = \''.$name.'\'');
+			$groups = $this->db->execute()->loadObjectList();
+			$account[0]->usergroup = '';
+			foreach ($groups as $group)
+			{
+				$account[0]->usergroup .= $group->title.', ';
+			}
+			$account[0]->usergroup = explode(', ', $account[0]->usergroup);
 			return $account;
 		}
 	}

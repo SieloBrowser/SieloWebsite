@@ -24,7 +24,7 @@ class User extends BaseController
 	public function __construct()
 	{
 		parent::__construct('User', 'Site');
-		$this->setLang('en', 'User', 'Site');
+		$this->setLang('fr', 'User', 'Site');
 	}
 
 	/**
@@ -74,18 +74,12 @@ class User extends BaseController
 
 	}
 
-	/**
-	 *
-	 */
-	public function invokeRegisterPage()
+	public function invokeJoinPage()
 	{
-		if($this->model->isConnected())
-		{
-			echo 'already connected';
-		} else {
-			$this->setParams($this->lang, 'lang');
-			$this->render('User/register');
-		}
+		$this->useCache(false);
+		$this->setParams(($this->model->isConnected()) ? true : false, 'isConnected');
+		$this->setParams($this->lang, 'lang');
+		$this->render('User/join');
 	}
 
 	/**
@@ -101,7 +95,7 @@ class User extends BaseController
 	 */
 	public function invokeViewAccountPage($name)
 	{
-		$this->useCache(false);
+//		$this->useCache(false);
 		$account = $this->model->getAccount($name);
 		if(count($account) !== 0)
 		{
@@ -109,7 +103,7 @@ class User extends BaseController
 			$this->setParams($this->lang, 'lang');
 			$this->htmlDocument->header->addMetaTag(['name' => 'testMeta']);
 			$this->htmlDocument->header->setTitle($this->lang->getKey('ACCOUNT_PAGE_TITLE').' '.$name);
-			$this->render('User/page');
+			$this->render('User/account', '/'.$name);
 		} else {
 			$this->setParams($this->lang, 'lang');
 			$this->render('Default/404');

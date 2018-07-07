@@ -20,14 +20,14 @@ class ThemeGallery extends BaseController {
 
 	public function invokeListing()
 	{
-		$this->setParams($this->model->getThemes(), 'themes');
+		$this->setParam($this->model->getThemes(), 'themes');
 		$this->render('Theme/listing');
 	}
 
 	public function invokeThemePage($name)
 	{
-		$this->setParams($this->model->getTheme($name));
-		$this->setParams($this->lang, 'lang');
+		$this->setParam($this->model->getTheme($name));
+		$this->setParam($this->lang, 'lang');
 		$this->render('Theme/page');
 	}
 }

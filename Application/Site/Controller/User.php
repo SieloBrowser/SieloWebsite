@@ -8,7 +8,6 @@
 
 namespace Application\Site\Controller;
 
-
 use Core\MVC\BaseController;
 
 class User extends BaseController
@@ -24,90 +23,123 @@ class User extends BaseController
 	public function __construct()
 	{
 		parent::__construct('User', 'Site');
-		$this->setLang('fr', 'User', 'Site');
+		$this->setLang((\Application\Site\Model\User::isConnected()) ? $_SESSION['lang'] : 'en', 'User', 'Site');
 	}
 
 	/**
+	 *
+	 *
 	 * @param array $infos
 	 */
 	public function createAccount($infos)
 	{
+	    /*
+	     * Params
+	     */
 		$accountReturn = $this->model->createAccount($infos['name'], $infos['surname'], $infos['pseudo'], $infos['password'], $infos['confirm'], $infos['email']);
 
-		$renderPage = 'User/register';
+		$renderPage = 'User/join';
 		if($accountReturn === 'Done')
 		{
-			$this->setParams($this->model->getAccount($infos['name']), 'account');
-			$renderPage = 'User/page';
-		} else if($accountReturn === 'Already exists' )
-		{
-			$this->setParams($this->lang->getKey('ERROR_ACCOUNT_ALREADY_EXISTS'), 'returnError');
-		} else if($accountReturn === 'Password does not match')
-		{
-			$this->setParams($this->lang->getKey('ERROR_PASSWORD_DOES_NOT_MATCH_CONFIRM'), 'returnError');
-		}
-		$this->setParams($this->lang, 'lang');
+			$this->setParam($this->model->getAccount($infos['name']), 'account');
+			$this->login($infos);
+			header('Location: User/my');
+		} else if($accountReturn === 'Already exists')
+			$this->setParam($this->lang->getKey('ERROR_ACCOUNT_ALREADY_EXISTS'), 'returnError');
+		else if($accountReturn === 'Password does not match')
+			$this->setParam($this->lang->getKey('ERROR_PASSWORD_DOES_NOT_MATCH_CONFIRM'), 'returnError');
+		$this->setParam($this->lang, 'lang');
+		/*
+		 * Render
+		 */
 		$this->render($renderPage);
-	}
+		/*
+		 * Emitter
+		 */
+        $this->emitter->emit('Account.created');
+    }
 
 	/**
 	 * @param $infos
 	 */
 	public function login($infos)
 	{
-		$this->useCache(false);
+	    /*
+	     * Emitter
+	     */
+        $this->emitter->emit('Account.onLogin');
+	    /*
+	     * Param
+	     */
 		$accountReturn = $this->model->login($infos['pseudo'], $infos['password']);
+		if($accountReturn === 'Done')
+        {
+            $this->model->setParam('lang', 'en');
+            $this->model->setParam('pseudo', $infos['pseudo']);
+        } else if($accountReturn === 'Account pseudo or password doesn\'t match')
+            $this->setParam($this->lang->getKey('ERROR_ACCOUNT_PSEUDO_OR_PASSWORD_DOESNT_MATCH', 'returnError'));
+        else if($accountReturn === 'Account pseudo or password is not set')
+            $this->setParam($this->lang->getKey('ERROR_ACCOUNT_PSEUDO_OR_PASSWORD_IS_NOT_SET', 'returnError'));
+		/*
+		 * Emitter
+		 */
+		$this->emitter->emit('Account.loginSuccessful');
 	}
 
-	/**
+	/*
 	 *
 	 */
-	public function invokeLoginPage()
+	public function disconnect()
 	{
-
-		if($this->model->isConnected())
-		{
-			echo 'already connected';
-		} else {
-			$this->render('User/login');
-		}
-
-	}
+        $this->emitter->emit('Account.onDisconnect');
+        $accountReturn = $this->model->disconnect();
+        $this->emitter->emit('Account.disconnected');
+    }
 
 	public function invokeJoinPage()
 	{
-		$this->useCache(false);
-		$this->setParams(($this->model->isConnected()) ? true : false, 'isConnected');
-		$this->setParams($this->lang, 'lang');
+	    $this->emitter->emit('Render.onRender');
+		$this->setParam($this->lang, 'lang');
 		$this->render('User/join');
-	}
-
-	/**
-	 *
-	 */
-	public function invokeAccountPage()
-	{
-
+		$this->emitter->emit('Render.joinView');
 	}
 
 	/**
 	 * @param $name
 	 */
-	public function invokeViewAccountPage($name)
+	public function invokeAccountPage($name)
 	{
-//		$this->useCache(false);
 		$account = $this->model->getAccount($name);
-		if(count($account) !== 0)
+        $this->setParam($this->lang, 'lang');
+        if(count($account) !== 0)
 		{
-			$this->setParams($account[0], 'account');
-			$this->setParams($this->lang, 'lang');
+			$this->setParam($account[0], 'account');
 			$this->htmlDocument->header->addMetaTag(['name' => 'testMeta']);
 			$this->htmlDocument->header->setTitle($this->lang->getKey('ACCOUNT_PAGE_TITLE').' '.$name);
-			$this->render('User/account', '/'.$name);
+			$this->render('User/account');
+			$this->emitter->emit('Render.account');
 		} else {
-			$this->setParams($this->lang, 'lang');
 			$this->render('Default/404');
 		}
-
 	}
+
+	public function invokeMyPage()
+    {
+        if(\Application\Site\Model\User::isConnected())
+        {
+            $account = $this->model->getAccount(\Application\Site\Model\User::getParam('pseudo'));
+            $this->setParam($this->lang, 'lang');
+            if(count($account) !== 0)
+            {
+
+                $this->render('User/my');
+                $this->emitter->emit('Render.myAccount');
+
+            } else {
+                $this->render('Default/404');
+            }
+        } else {
+            header('Location: /Sielo/');
+        }
+    }
 }

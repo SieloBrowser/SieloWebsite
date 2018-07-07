@@ -31,6 +31,8 @@ class User extends BaseModel
 	}
 
 	/**
+	 * createAccount
+	 *
 	 * @param string $name
 	 * @param string $surname
 	 * @param string $pseudo
@@ -60,6 +62,8 @@ class User extends BaseModel
 	}
 
 	/**
+	 * deleteAccount
+	 *
 	 * @param string $name
 	 * @param string $confirm
 	 */
@@ -76,6 +80,8 @@ class User extends BaseModel
 	}
 
 	/**
+	 * getAccount
+	 *
 	 * @param string $name
 	 *
 	 * @return mixed
@@ -99,6 +105,8 @@ class User extends BaseModel
 	}
 
 	/**
+	 * accountExists
+	 *
 	 * @param string $pseudo
 	 * @param string $email
 	 *
@@ -125,14 +133,6 @@ class User extends BaseModel
 	}
 
 	/**
-	 * @return string bool
-	 */
-	public function isConnected()
-	{
-		return isset($_SESSION);
-	}
-
-	/**
 	 * @param string $pseudo
 	 * @param string $password
 	 */
@@ -146,73 +146,91 @@ class User extends BaseModel
 			{
 				if($pseudo === $account->pseudo && password_verify($password, $account->password))
 				{
-					$this->startSession($account);
-				}
+				    $_SESSION['isConnected'] = true;
+				    return 'Done';
+				} else {
+				    return 'Account pseudo or password doesn\'t match';
+                }
 			}
 		} else {
-
+            return 'Account pseudo or password is not set';
 		}
 	}
 
 	/**
-	 *
+	 * Disconnect
 	 */
 	public function disconnect()
 	{
-
-	}
-
-	/**
-	 * @param $info
-	 * @param $value
-	 */
-	public function changeInformation($info, $value)
-	{
-
-	}
-
-	/**
-	 *
-	 */
-	private function startSession()
-	{
-		session_start();
-		$_SESSION['lang'] = 'en';
-	}
-
-	/**
-	 *
-	 */
-	private function disconnectSession()
-	{
-		session_destroy();
+	    if(self::isConnected())
+        {
+			session_destroy();
+		}
 	}
 
 	/**
 	 * @param $param
 	 */
-	public function setSessionParams($param)
+	static public function setParam($paramName, $paramValue)
 	{
+		if(self::isConnected())
+		{
+			echo 'yes';
+			$_SESSION[$paramName] = $paramValue;
+		}
+	}
 
+	/**
+	 * @param $paramName
+	 */
+	static public function deleteParam($paramName)
+	{
+		if(self::isConnected())
+		{
+			if(self::paramExists($paramName))
+			{
+				unset($_SESSION[$paramName]);
+			}
+		}
+	}
+
+	/**
+	 * @param $paramName
+	 *
+	 * @return bool
+	 */
+	static public function paramExists($paramName)
+	{
+		if(key_exists($paramName, $_SESSION))
+			return true;
+		return false;
+	}
+
+	static public function isConnected()
+	{
+		if(self::sessionActive())
+			return self::paramExists('isConnected');
 	}
 
 	/**
 	 * @return bool
 	 */
-	static function sessionStarted()
+	static function sessionActive()
 	{
 		return session_status() === PHP_SESSION_ACTIVE;
 	}
 
 	/**
 	 * @param $paramName
+	 *
+	 * @return mixed
 	 */
-	static function getSessionParam($paramName)
+	static function getParam($paramName)
 	{
-		if(self::sessionStarted())
+		if(self::isConnected())
 		{
-
+			if(self::paramExists($paramName))
+				return $_SESSION[$paramName];
 		}
 	}
-
 }

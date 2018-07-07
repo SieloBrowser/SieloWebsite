@@ -19,10 +19,10 @@ class BaseController
 	 * @var BaseModel mixed
 	 */
 	protected $model;
-	/**
-	 * @var Cache Cache
-	 */
-	protected $cache;
+//	/**
+//	 * @var Cache Cache
+//	 */
+//	protected $cache;
 	/**
 	 * @var Lang
 	 */
@@ -50,11 +50,12 @@ class BaseController
 	/**
 	 * @var string
 	 */
-	private $defaultlang = 'fr';
-	/**
-	 * @var bool
-	 */
-	private $cacheActive = true;
+	private $defaultlang = 'en';
+
+//	/**
+//	 * @var bool
+//	 */
+//	private $cacheActive = true;
 
 	/**
 	 * BaseController constructor.
@@ -65,7 +66,6 @@ class BaseController
 	public function __construct(string $modelName, string $type)
 	{
 		$this->model = $this->getModel($modelName, $type);
-		$this->cache = new Cache($type);
 		$this->htmlDocument = Document::getInstance();
 		$this->type = $type;
 		$this->emitter = Emitter::getInstance();
@@ -99,20 +99,20 @@ class BaseController
 		}
 	}
 
-	/**
-	 * @param bool $param
-	 */
-	protected function useCache(bool $param = true)
-	{
-		$this->cacheActive = $param;
-	}
+//	/**
+//	 * @param bool $param
+//	 */
+//	protected function useCache(bool $param = true)
+//	{
+//		$this->cacheActive = $param;
+//	}
 
 
 	/**
 	 * @param mixed       $param
 	 * @param string|null $name
 	 */
-	public function setParams($param, string $name = null)
+	public function setParam($param, string $name = null)
 	{
 		if(is_array($param) && is_array($name))
 		{
@@ -132,24 +132,35 @@ class BaseController
 	 */
 	public function render(string $viewName, $cacheName = '')
 	{
-		if($this->cache->isExpired($viewName.$cacheName) === false && $this->cacheActive === true)
-		{
-			$this->cache->get($viewName.$cacheName);
-		} else {
-			ob_start();
-			$this->params;
-			$this->htmlDocument;
-			require $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$viewName.'.php';
-			$includedContent = ob_get_contents();
-			ob_end_clean();
-			ob_start();
-			require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
-			$content = ob_get_contents();
-			ob_end_clean();
-			if($this->cacheActive === true)
-				$this->cache->add($viewName.$cacheName, $content);
-			echo $content;
-		}
+        ob_start();
+        $this->params;
+        $this->htmlDocument;
+        require $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$viewName.'.php';
+        $includedContent = ob_get_contents();
+        ob_end_clean();
+        ob_start();
+        require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
+        $content = ob_get_contents();
+        ob_end_clean();
+        echo $content;
+//		if($this->cache->isExpired($viewName.$cacheName) === false && $this->cacheActive === true)
+//		{
+//			$this->cache->get($viewName.$cacheName);
+//		} else {
+//			ob_start();
+//			$this->params;
+//			$this->htmlDocument;
+//			require $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$viewName.'.php';
+//			$includedContent = ob_get_contents();
+//			ob_end_clean();
+//			ob_start();
+//			require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$this->type.'/View/'.$this->defaultView.'.php';
+//			$content = ob_get_contents();
+//			ob_end_clean();
+//			if($this->cacheActive === true)
+//				$this->cache->add($viewName.$cacheName, $content);
+//			echo $content;
+//		}
 	}
 
 }

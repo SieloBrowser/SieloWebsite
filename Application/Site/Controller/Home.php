@@ -9,19 +9,20 @@
 namespace Application\Site\Controller;
 
 
+use Core\Cookie\Cookie;
 use Core\MVC\BaseController;
+use Core\Session\Session;
 
 class Home extends BaseController
 {
 
-	protected $lang;
-
 	public function __construct()
 	{
 
-		parent::__construct('', 'Site');
-		$this->setLang((\Application\Site\Model\User::isConnected()) ? $_SESSION['lang'] : 'en', 'Home', 'Site');
-
+		parent::__construct('Site');
+        $lang = (Session::isConnected() == true) ? $_SESSION['lang'] : ((Cookie::cookieExists('lang') == true) ? Cookie::getCookie('lang') : 'en');
+        $this->setLang($lang, 'Home', 'Site');
+        $this->loadModel('User');
 	}
 
 	public function invokeHomePage()
@@ -33,8 +34,7 @@ class Home extends BaseController
 	    /*
 	     * View params
 	     */
-        $userModel = new \Application\Site\Model\User();
-        $account = $userModel->getAccount($_SESSION['pseudo']);
+        $account = $this->User->getAccount($_SESSION['nickname']);
         $this->setParam($account[0], 'account');
         $this->setParam($this->lang, 'lang');
         /*
@@ -47,7 +47,7 @@ class Home extends BaseController
         $this->emitter->emit('Home.viewHome');
 	}
 
-	public function invokePresentationPage($forced = false)
+	public function invokePresentationPage()
     {
         /*
          * Meta & title
@@ -56,8 +56,6 @@ class Home extends BaseController
         /*
          * View params
          */
-        if($forced)
-            $this->setParam(true, 'forced');
         $this->setParam($this->lang, 'lang');
         /*
          * Render

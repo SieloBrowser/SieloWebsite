@@ -1,5 +1,5 @@
 <?php
-    if(!\Application\Site\Model\User::isConnected())
+    if(!\Core\Session\Session::isConnected())
         header('Location: /Sielo/');
     $html = '<ul>
                 <li class="opener">
@@ -12,9 +12,10 @@
                 <li class="opener">
                     <a href="#">'.$this->params['lang']->getKey('HEADER_SITEOPT').'</a>    
                     <ul>
-                        <li><a href="/Sielo/lang">'.$this->params['lang']->getKey('HEADER_SITEOPT_LANG').'</a></li>
+                        <li><a href="/Sielo/account/lang">'.$this->params['lang']->getKey('HEADER_SITEOPT_LANG').'</a></li>
                         <li><a href="/Sielo/presentation">'.$this->params['lang']->getKey('HEADER_SITEOPT_PRESENTATION').'</a></li>
                         <li><a href="/Sielo/account/my">'.$this->params['lang']->getKey('HEADER_SITEOPT_ACCOUNT').'</a></li>
+                        <li><a href="/Sielo/join/disconnect">'.$this->params['lang']->getKey('HEADER_SITEOPT_DISCONNECT').'</a></li>
                     </ul>
                 </li>
             </ul>';
@@ -26,9 +27,9 @@
     <div class="content">
         <header>
             <h2>Sielo home page</h2>
-            <h4><?php echo $this->params['lang']->getKey('WELCOME').' '.$this->params['account']->pseudo; ?></h4>
+            <h4><?php echo $this->params['lang']->getKey('WELCOME').' '.$this->params['account']->nickname; ?></h4>
         </header>
-        <span class="image"><img src="/Sielo/Application/Site/Datas/User/<?php echo $this->params['account']->pseudo; ?>.jpg" alt="" /></span>
+        <span class="image"><img src="/Sielo/Application/Site/Datas/User/<?php echo $this->params['account']->nickname; ?>.jpg" alt="" /></span>
     </div>
     <a href="#presentation" class="goto-next scrolly">Next</a>
 </section>

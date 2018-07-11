@@ -1,0 +1,20 @@
+input {
+    text-align: center;
+    width: 50%;
+}
+
+input .w4 {
+    width: 100%;
+}
+
+input .w3 {
+    width: 75%;
+}
+
+input .w2 {
+    width: 50%;
+}
+
+input .w1 {
+    width: 25%;
+}

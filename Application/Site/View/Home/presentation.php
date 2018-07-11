@@ -2,20 +2,20 @@
 <?php
     $html = '<ul>
             <li class="opener">
-                <a href="#">This page</a>
+                <a href="#">'.$this->params['lang']->getKey('HEADER_THISPAGE').'</a>
                 <ul>
-                    <li><a href="#promo" class="scrolly">Presentation</a></li>
-                    <li><a href="#tabspace" class="scrolly">Tabs spaces</a></li>
-                    <li><a href="#floatingbutton" class="scrolly">Floating Button</a></li>
-                    <li><a href="#download" class="scrolly">Download</a></li>
+                    <li><a href="#promo" class="scrolly">'.$this->params['lang']->getKey('HEADER_THISPAGE_PRESENTAION_PROMO').'</a></li>
+                    <li><a href="#tabspace" class="scrolly">'.$this->params['lang']->getKey('HEADER_THISPAGE_PRESENTAION_TABSPACE').'</a></li>
+                    <li><a href="#floatingbutton" class="scrolly">'.$this->params['lang']->getKey('HEADER_THISPAGE_PRESENTAION_FLOATING').'</a></li>
+                    <li><a href="#download" class="scrolly">'.$this->params['lang']->getKey('HEADER_THISPAGE_PRESENTAION_DOWNLOAD').'</a></li>
                 </ul>
             </li>
             <li class="opener">
-                <a href="#">Site options</a>    
+                <a href="#">'.$this->params['lang']->getKey('HEADER_SITEOPT').'</a>    
                 <ul>
-                    <li><a href="/Sielo/account/my#lang">'.$this->params['lang']->getKey('HEADER_SITEOPT_LANG').'</a></li>
+                    <li><a href="/Sielo/account/lang">'.$this->params['lang']->getKey('HEADER_SITEOPT_LANG').'</a></li>
                     ';
-    $html .= ($this->params['forced']) ? '<li><a href="/Sielo/">'.$this->params['lang']->getKey('HEADER_SITEOPT_HOME').'</a></li><li><a href="/Sielo/account/my">'.$this->params['lang']->getKey('HEADER_SITEOPT_ACCOUNT').'</a></li>' : '<li><a href="/Sielo/join#login">'.$this->params['lang']->getKey('HEADER_SITEOPT_LOGIN').'</a></li><li><a href="/Sielo/join#register">'.$this->params['lang']->getKey('HEADER_SITEOPT_REGISTER').'</a></li>';
+    $html .= (\Core\Session\Session::isConnected()) ? '<li><a href="/Sielo/">'.$this->params['lang']->getKey('HEADER_SITEOPT_HOME').'</a></li><li><a href="/Sielo/account/my">'.$this->params['lang']->getKey('HEADER_SITEOPT_ACCOUNT').'</a></li><li><a href="/Sielo/join/disconnect">'.$this->params['lang']->getKey('HEADER_SITEOPT_DISCONNECT').'</a></li>' : '<li><a href="/Sielo/join#login">'.$this->params['lang']->getKey('HEADER_SITEOPT_LOGIN').'</a></li><li><a href="/Sielo/join#register">'.$this->params['lang']->getKey('HEADER_SITEOPT_REGISTER').'</a></li>';
     $html .= '</ul></li></ul>';
     $this->htmlDocument->body->generateSpecificHtmlVar('headerNav', $html);
 ?>

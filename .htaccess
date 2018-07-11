@@ -4,3 +4,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php?url=/$1 [QSA,L]
 </IfModule>
+<IfModule php5_module>
+    php_flag session.cookie_httponly on
+</IfModule>

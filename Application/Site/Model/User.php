@@ -10,15 +10,10 @@ namespace Application\Site\Model;
 
 use Core\Database\QueryBuilder;
 use Core\MVC\BaseModel;
+use Core\Session\Session;
 
 class User extends BaseModel
 {
-
-	/**
-	 * @var array
-	 */
-	private $_sessionParams = [];
-
 	/**
 	 * User constructor.
 	 */
@@ -35,7 +30,7 @@ class User extends BaseModel
 	 *
 	 * @param string $name
 	 * @param string $surname
-	 * @param string $pseudo
+	 * @param string $nickname
 	 * @param string $password
 	 * @param string $confirm
 	 * @param string $email
@@ -43,14 +38,14 @@ class User extends BaseModel
 	 * @return string
 	 * @throws \Exception
 	 */
-	public function createAccount(string $name, string $surname, string $pseudo, string $password, string $confirm, string $email)
+	public function createAccount(string $name, string $surname, string $nickname, string $password, string $confirm, string $email)
 	{
 		if($password === $confirm)
 		{
-			if($this->accountExists($pseudo, $email) === false)
+			if($this->accountExists($nickname, $email) === false)
 			{
-				$this->db->insert('`user`')->column(['name', 'surname', 'pseudo', 'password', 'email', 'registrationDate'])->values([':name', ':surname', ':pseudo', ':password', ':email', ':date']);
-				$this->db->appendParameters([':name' => $name, ':surname' => $surname, ':pseudo' => $pseudo, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email, ':date' => date('Y-m-d H:i:s')]);
+				$this->db->insert('`user`')->column(['name', 'surname', 'nickname', 'password', 'email', 'registrationDate'])->values([':name', ':surname', ':nickname', ':password', ':email', ':date']);
+				$this->db->appendParameters([':name' => $name, ':surname' => $surname, ':nickname' => $nickname, ':password' => password_hash($password, PASSWORD_DEFAULT), ':email' => $email, ':date' => date('Y-m-d H:i:s')]);
 				$this->db->execute();
 				return 'Done';
 			} else {
@@ -90,7 +85,7 @@ class User extends BaseModel
 	{
 		if($name)
 		{
-			$this->db->select('*')->from('`user`')->where('`pseudo` = \''.$name.'\'');
+			$this->db->select('*')->from('`user`')->where('`nickname` = \''.$name.'\'');
 			$account = $this->db->execute()->loadObjectList();
 			$this->db->select('title')->from('usergroup_map')->join('inner', 'usergroups', 'usergroups.id = usergroup_map.usergroup')->where('`user` = \''.$name.'\'');
 			$groups = $this->db->execute()->loadObjectList();
@@ -107,130 +102,59 @@ class User extends BaseModel
 	/**
 	 * accountExists
 	 *
-	 * @param string $pseudo
+	 * @param string $nickname
 	 * @param string $email
 	 *
 	 * @return bool
 	 * @throws \Exception
 	 */
-	public function accountExists($pseudo, $email)
+	public function accountExists($nickname, $email)
 	{
-		if($pseudo && $email)
+		if($nickname && $email)
 		{
-			$this->db->select('`pseudo`, `email`')->from('`user`')->execute();
+			$this->db->select('`nickname`, `email`')->from('`user`')->execute();
 			$accounts = $this->db->loadObjectList();
 			foreach ($accounts as $account)
 			{
-				if($pseudo === $account->pseudo && $email === $account->email)
+				if($nickname === $account->nickname && $email === $account->email)
 				{
 					return true;
 				}
 			}
 			return false;
 		} else {
-			throw new \Exception('[AccountExists]: Name, Pseudo or email is not set');
+			throw new \Exception('[AccountExists]: Name, Nickname or email is not set');
 		}
 	}
 
 	/**
-	 * @param string $pseudo
+	 * @param string $nickname
 	 * @param string $password
+     *
+     * @return string
 	 */
-	public function login($pseudo, $password)
+	public function login($nickname, $password)
 	{
-		if($pseudo && $password)
+		if($nickname && $password)
 		{
 			$this->db->select('*')->from('`user`')->execute();
 			$accounts = $this->db->loadObjectList();
 			foreach ($accounts as $account)
 			{
-				if($pseudo === $account->pseudo && password_verify($password, $account->password))
-				{
-				    $_SESSION['isConnected'] = true;
-				    return 'Done';
-				} else {
-				    return 'Account pseudo or password doesn\'t match';
-                }
+                if($nickname === $account->nickname)
+                {
+				    if(password_verify($password, $account->password))
+                    {
+                        Session::connect();
+                        return 'Done';
+                    } else {
+				        return 'Account password doesn\'t match';
+                    }
+				}
 			}
-		} else {
-            return 'Account pseudo or password is not set';
-		}
-	}
-
-	/**
-	 * Disconnect
-	 */
-	public function disconnect()
-	{
-	    if(self::isConnected())
-        {
-			session_destroy();
-		}
-	}
-
-	/**
-	 * @param $param
-	 */
-	static public function setParam($paramName, $paramValue)
-	{
-		if(self::isConnected())
-		{
-			echo 'yes';
-			$_SESSION[$paramName] = $paramValue;
-		}
-	}
-
-	/**
-	 * @param $paramName
-	 */
-	static public function deleteParam($paramName)
-	{
-		if(self::isConnected())
-		{
-			if(self::paramExists($paramName))
-			{
-				unset($_SESSION[$paramName]);
-			}
-		}
-	}
-
-	/**
-	 * @param $paramName
-	 *
-	 * @return bool
-	 */
-	static public function paramExists($paramName)
-	{
-		if(key_exists($paramName, $_SESSION))
-			return true;
-		return false;
-	}
-
-	static public function isConnected()
-	{
-		if(self::sessionActive())
-			return self::paramExists('isConnected');
-	}
-
-	/**
-	 * @return bool
-	 */
-	static function sessionActive()
-	{
-		return session_status() === PHP_SESSION_ACTIVE;
-	}
-
-	/**
-	 * @param $paramName
-	 *
-	 * @return mixed
-	 */
-	static function getParam($paramName)
-	{
-		if(self::isConnected())
-		{
-			if(self::paramExists($paramName))
-				return $_SESSION[$paramName];
+            return 'Account nickname doesn\'t exists';
+        } else {
+            return 'Account nickname or password is not set';
 		}
 	}
 }

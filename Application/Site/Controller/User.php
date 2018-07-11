@@ -8,22 +8,22 @@
 
 namespace Application\Site\Controller;
 
+use Core\Cookie\Cookie;
 use Core\MVC\BaseController;
+use Core\Session\Session;
 
 class User extends BaseController
 {
-	/**
-	 * @var
-	 */
-	protected $lang;
-
 	/**
 	 * User constructor.
 	 */
 	public function __construct()
 	{
-		parent::__construct('User', 'Site');
-		$this->setLang((\Application\Site\Model\User::isConnected()) ? $_SESSION['lang'] : 'en', 'User', 'Site');
+		parent::__construct( 'Site');
+        $lang = (Session::isConnected() == true) ? $_SESSION['lang'] : ((Cookie::cookieExists('lang') == true) ? Cookie::getCookie('lang') : 'en');
+        $this->setLang($lang, 'Site');
+        $this->lang->addFile('User');
+        $this->loadModel('User');
 	}
 
 	/**
@@ -33,30 +33,35 @@ class User extends BaseController
 	 */
 	public function createAccount($infos)
 	{
+        /*
+         * Emitter
+         */
+        $this->emitter->emit('Account.onCreate');
 	    /*
-	     * Params
+	     * Account creation
 	     */
-		$accountReturn = $this->model->createAccount($infos['name'], $infos['surname'], $infos['pseudo'], $infos['password'], $infos['confirm'], $infos['email']);
-
-		$renderPage = 'User/join';
-		if($accountReturn === 'Done')
-		{
-			$this->setParam($this->model->getAccount($infos['name']), 'account');
-			$this->login($infos);
-			header('Location: User/my');
-		} else if($accountReturn === 'Already exists')
-			$this->setParam($this->lang->getKey('ERROR_ACCOUNT_ALREADY_EXISTS'), 'returnError');
-		else if($accountReturn === 'Password does not match')
-			$this->setParam($this->lang->getKey('ERROR_PASSWORD_DOES_NOT_MATCH_CONFIRM'), 'returnError');
-		$this->setParam($this->lang, 'lang');
-		/*
-		 * Render
-		 */
-		$this->render($renderPage);
-		/*
-		 * Emitter
-		 */
+		$accountReturn = $this->User->createAccount($infos['name'], $infos['surname'], $infos['nickname'], $infos['password'], $infos['confirm'], $infos['email']);
+        /*
+         * Emitter
+         */
         $this->emitter->emit('Account.created');
+
+        /*
+         * Render & Params
+         */
+        if($accountReturn === 'Done')
+		{
+		    $this->User->login($infos['$nickname'], $infos['password']);
+		    header('Location: /Sielo/account/my');
+		    return;
+		} else if($accountReturn === 'Already exists')
+			$this->setParam($this->lang->getKey('JOIN_ERROR_ACCOUNT_ALREADY_EXISTS'), 'returnError');
+		else if($accountReturn === 'Password does not match')
+			$this->setParam($this->lang->getKey('JOIN_ERROR_PASSWORD_DOES_NOT_MATCH_CONFIRM'), 'returnError');
+		$this->setParam(['$nickname' => $infos['$nickname'], 'name' => $infos['name'], 'surname' => $infos['surname'], 'email' => $infos['email']], 'returnInformations');
+        $this->setParam('register', 'typeOf'); // Typeof
+        $this->setParam($this->lang, 'lang'); // Lang
+		$this->render('User/join');
     }
 
 	/**
@@ -68,23 +73,52 @@ class User extends BaseController
 	     * Emitter
 	     */
         $this->emitter->emit('Account.onLogin');
-	    /*
-	     * Param
-	     */
-		$accountReturn = $this->model->login($infos['pseudo'], $infos['password']);
-		if($accountReturn === 'Done')
-        {
-            $this->model->setParam('lang', 'en');
-            $this->model->setParam('pseudo', $infos['pseudo']);
-        } else if($accountReturn === 'Account pseudo or password doesn\'t match')
-            $this->setParam($this->lang->getKey('ERROR_ACCOUNT_PSEUDO_OR_PASSWORD_DOESNT_MATCH', 'returnError'));
-        else if($accountReturn === 'Account pseudo or password is not set')
-            $this->setParam($this->lang->getKey('ERROR_ACCOUNT_PSEUDO_OR_PASSWORD_IS_NOT_SET', 'returnError'));
-		/*
+        /*
+         * Account login
+         */
+        $accountReturn = $this->User->login($infos['nickname'], $infos['password']);
+        /*
 		 * Emitter
 		 */
-		$this->emitter->emit('Account.loginSuccessful');
+        $this->emitter->emit('Account.loginSuccessful');
+        /*
+         * Render & Params
+         */
+		if($accountReturn === 'Done')
+        {
+            Session::setParam('lang', (Cookie::cookieExists('lang')) ? Cookie::getCookie('lang') : 'en' );
+            Session::setParam('nickname', $infos['nickname']);
+            header('Location: /Sielo/account/my');
+            return;
+        } else if($accountReturn === 'Account nickname doesn\'t exists')
+        {
+            $this->setParam($this->lang->getKey('JOIN_ERROR_ACCOUNT_PASSWORD_DOESNT_MATCH'), 'returnError');
+        } else if($accountReturn === 'Account password doesn\'t match') {
+            $this->setParam($this->lang->getKey('JOIN_ERROR_ACCOUNT_NICKNAME_DOESNT_EXIST'), 'returnError');
+        } else if($accountReturn === 'Account nickname or password is not set')
+        {
+            $this->setParam($this->lang->getKey('JOIN_ERROR_ACCOUNT_NICKNAME_OR_PASSWORD_IS_NOT_SET'), 'returnError');
+        }
+        $this->setParam(['nickname' => $infos['nickname']], 'returnInformations');
+        $this->setParam('login', 'typeOf'); // Typeof
+        $this->setParam($this->lang, 'lang'); // Lang
+        $this->render('User/join');
 	}
+
+	public function changeImage($informations)
+    {
+        var_dump($informations);
+    }
+
+    public function changeNickname($informations)
+    {
+
+    }
+
+    public function changePassword($informations)
+    {
+
+    }
 
 	/*
 	 *
@@ -92,8 +126,22 @@ class User extends BaseController
 	public function disconnect()
 	{
         $this->emitter->emit('Account.onDisconnect');
-        $accountReturn = $this->model->disconnect();
+        Session::disconnect();
         $this->emitter->emit('Account.disconnected');
+        header('Location: /Sielo/');
+    }
+
+    public function lang($lang)
+    {
+        if(Session::isConnected())
+        {
+            Session::setParam('lang', $lang);
+        } else {
+            if(Cookie::cookieExists('lang'))
+                Cookie::deleteCookie('lang');
+            Cookie::addCookie('lang', $lang, 60*10, '/');
+        }
+        header('Location: /Sielo/');
     }
 
 	public function invokeJoinPage()
@@ -109,7 +157,7 @@ class User extends BaseController
 	 */
 	public function invokeAccountPage($name)
 	{
-		$account = $this->model->getAccount($name);
+		$account = $this->User->getAccount($name);
         $this->setParam($this->lang, 'lang');
         if(count($account) !== 0)
 		{
@@ -125,21 +173,26 @@ class User extends BaseController
 
 	public function invokeMyPage()
     {
-        if(\Application\Site\Model\User::isConnected())
+        if(Session::isConnected())
         {
-            $account = $this->model->getAccount(\Application\Site\Model\User::getParam('pseudo'));
+            $account = $this->User->getAccount(Session::getParam('nickname'));
             $this->setParam($this->lang, 'lang');
             if(count($account) !== 0)
             {
-
+                $this->setParam($account[0], 'account');
                 $this->render('User/my');
                 $this->emitter->emit('Render.myAccount');
-
             } else {
                 $this->render('Default/404');
             }
         } else {
             header('Location: /Sielo/');
         }
+    }
+
+    public function invokeLangPage()
+    {
+        $this->setParam($this->lang, 'lang');
+        $this->render('User/lang');
     }
 }

@@ -12,6 +12,7 @@ use Core\Cache\Cache;
 use Core\Emitter\Emitter;
 use Core\Language\Lang;
 use Core\Html\Document;
+use Core\Language\LangV2;
 
 class BaseController
 {
@@ -63,22 +64,26 @@ class BaseController
 	 * @param string $modelName
 	 * @param string $type
 	 */
-	public function __construct(string $modelName, string $type)
+	public function __construct(string $type)
 	{
-		$this->model = $this->getModel($modelName, $type);
 		$this->htmlDocument = Document::getInstance();
 		$this->type = $type;
 		$this->emitter = Emitter::getInstance();
 	}
+
+	public function loadModel($modelName)
+    {
+        $this->$modelName = $this->getModel($modelName, $this->type);
+    }
 
 	/**
 	 * @param string $lang
 	 * @param string $langFileName
 	 * @param string $sitePart
 	 */
-	public function setLang(string $lang, string $langFileName, string $sitePart)
+	public function setLang(string $lang, string $sitePart)
 	{
-		$this->lang = new Lang((isset($lang)) ? $lang : $this->defaultlang, $langFileName, $sitePart);
+		$this->lang = new Lang((isset($lang)) ? $lang : $this->defaultlang, $sitePart);
 	}
 
 	/**

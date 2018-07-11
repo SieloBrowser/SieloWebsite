@@ -7,11 +7,13 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="sielo-transparent-background" content="True">
-        <!--[if lte IE 8]><script src="/Sielo/Application/Assets/js/ie/html5shiv.js"></script><![endif]-->
-        <link rel="stylesheet" href="/Sielo/Application/Assets/css/main.css" />
+        <!--[if lte IE 8]><script src="/Sielo/Application/Assets/Template/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="/Sielo/Application/Assets/Template/css/main.css" />
+        <link rel="stylesheet" href="/Sielo/Application/Assets/Utils/messages.css" />
+        <link rel="stylesheet" href="/Sielo/Application/Assets/Utils/inputs.css" />
 <!--        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="/Sielo/Application/Assets/css/ie9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="/Sielo/Application/Assets/css/ie8.css" /><![endif]-->
+        <!--[if lte IE 9]><link rel="stylesheet" href="/Sielo/Application/Assets/Template/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="/Sielo/Application/Assets/Template/css/ie8.css" /><![endif]-->
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118352128-1"></script>
         <script>
@@ -21,20 +23,20 @@
 
             gtag('config', 'UA-118352128-1');
         </script>
-        <script src="/Sielo/Application/Assets/js/jquery.min.js"></script>
-        <script src="/Sielo/Application/Assets/js/jquery.scrolly.min.js"></script>
-        <script src="/Sielo/Application/Assets/js/jquery.dropotron.min.js"></script>
-        <script src="/Sielo/Application/Assets/js/jquery.scrollex.min.js"></script>
-        <script src="/Sielo/Application/Assets/js/skel.min.js"></script>
-        <script src="/Sielo/Application/Assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="/Sielo/Application/Assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="/Sielo/Application/Assets/js/main.js"></script>
+        <script src="/Sielo/Application/Assets/Template/js/jquery.min.js"></script>
+        <script src="/Sielo/Application/Assets/Template/js/jquery.scrolly.min.js"></script>
+        <script src="/Sielo/Application/Assets/Template/js/jquery.dropotron.min.js"></script>
+        <script src="/Sielo/Application/Assets/Template/js/jquery.scrollex.min.js"></script>
+        <script src="/Sielo/Application/Assets/Template/js/skel.min.js"></script>
+        <script src="/Sielo/Application/Assets/Template/js/util.js"></script>
+        <!--[if lte IE 8]><script src="/Sielo/Application/Assets/Template/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/Sielo/Application/Assets/Template/js/main.js"></script>
     </head>
 
     <body class="landing">
         <div id="page-wrapper">
             <header id="header">
-                <h1 id="logo"><a href="index.html">Sielo</a></h1>
+                <h1 id="logo"><a href="#">Sielo</a></h1>
                 <!--    <h1><a href="/Sielo/join/">Join the community !</a><h1 id="logo">-->
                 <nav id="nav">
                     <?php

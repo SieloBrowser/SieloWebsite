@@ -21,7 +21,8 @@ class Home extends BaseController
 
 		parent::__construct('Site');
         $lang = (Session::isConnected() == true) ? $_SESSION['lang'] : ((Cookie::cookieExists('lang') == true) ? Cookie::getCookie('lang') : 'en');
-        $this->setLang($lang, 'Home', 'Site');
+        $this->setLang($lang, 'Site');
+        $this->lang->addFile('Home');
         $this->loadModel('User');
 	}
 

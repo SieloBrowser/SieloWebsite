@@ -139,7 +139,7 @@ class User extends BaseController
         } else {
             if(Cookie::cookieExists('lang'))
                 Cookie::deleteCookie('lang');
-            Cookie::addCookie('lang', $lang, 60*10, '/');
+            Cookie::addCookie('lang', $lang, '/',60*10);
         }
         header('Location: /Sielo/');
     }

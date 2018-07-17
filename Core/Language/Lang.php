@@ -8,6 +8,8 @@
 
 namespace Core\Language;
 
+use Core\File\IniFile;
+
 class Lang
 {
 
@@ -20,7 +22,9 @@ class Lang
         $this->lang = $lang;
         $this->basePart = $basePart;
         if(!is_null($basePart))
+        {
             $this->files['default'] = ["file" => fopen($_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$basePart.'/Langs/'.$lang.'/default.ini', 'r'), "use" => true];
+        }
     }
 
     public function addFile(string $fileName, string $part = null)
@@ -79,7 +83,6 @@ class Lang
                     }
                 }
             }
-
             fseek($file, 0);
         }
         return false;
@@ -87,8 +90,6 @@ class Lang
 
     private function fileExists(string $fileName)
     {
-        if(isset($this->files[$fileName]))
-            return true;
-        return false;
+        return isset($this->files[$fileName]);
     }
 }

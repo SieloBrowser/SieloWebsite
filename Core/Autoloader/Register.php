@@ -17,10 +17,8 @@ class Register
 
 	protected function __construct()
 	{
-
-		$this->register();
-
-	}
+	    $this->register();
+    }
 
 	private function register()
 	{

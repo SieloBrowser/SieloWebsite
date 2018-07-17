@@ -8,6 +8,8 @@
 
 namespace Core\Cache;
 
+use Core\Config\Config;
+
 class Cache
 {
 
@@ -32,7 +34,7 @@ class Cache
 
 	public function isExpired($fileName)
 	{
-		$expireTime = time() - 3600;
+		$expireTime = time() - Config::getInstance()->getCacheExpirationTime();
 		if (file_exists($this->cachePath.$fileName.'.html')  && filemtime($this->cachePath.$fileName.'.html') > $expireTime)
 		{
 			return false;

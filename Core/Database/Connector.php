@@ -8,6 +8,8 @@
 
 namespace Core\Database;
 
+use Core\Config\Config;
+
 class Connector
 {
 	public static $_instance;
@@ -24,12 +26,9 @@ class Connector
 
 	protected function __construct()
 	{
-		$this->getConfig();
-	}
-
-	private function getConfig()
-	{
-		$this->params = require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Core/Database/config.php';
+	    $config = Config::getInstance();
+	    $config->setCacheExpirationTime(random_int(10, 3600));
+	    $this->params = $config->getDbInformations();
 	}
 
 	public function getPDO()

@@ -8,13 +8,15 @@
 
 namespace Core\Cookie;
 
+use Core\Config\Config;
+
 class Cookie
 {
-    public static function addCookie($name, $value, $expiration, $path)
+    public static function addCookie($name, $value, $path, $expiration = null)
     {
         if(!self::cookieExists($name))
         {
-            setcookie($name, $value, time()+$expiration, $path);
+            setcookie($name, $value, time()+$expiration || Config::getInstance()->getCookieExpirationTime(), $path);
         }
     }
 

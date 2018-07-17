@@ -148,6 +148,12 @@ class BaseController
         $content = ob_get_contents();
         ob_end_clean();
         echo $content;
+
+        /*
+         *
+         * Cache system
+         *
+         */
 //		if($this->cache->isExpired($viewName.$cacheName) === false && $this->cacheActive === true)
 //		{
 //			$this->cache->get($viewName.$cacheName);
@@ -166,6 +172,11 @@ class BaseController
 //				$this->cache->add($viewName.$cacheName, $content);
 //			echo $content;
 //		}
+        /*
+         *
+         * //
+         *
+         */
 	}
 
 }

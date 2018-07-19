@@ -141,7 +141,7 @@ class User extends BaseController
                 Cookie::deleteCookie('lang');
             Cookie::addCookie('lang', $lang, '/',60*10);
         }
-        header('Location: /Sielo/');
+//        header('Location: /Sielo/');
     }
 
 	public function invokeJoinPage()

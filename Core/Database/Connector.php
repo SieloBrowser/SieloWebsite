@@ -27,7 +27,6 @@ class Connector
 	protected function __construct()
 	{
 	    $config = Config::getInstance();
-	    $config->setCacheExpirationTime(random_int(10, 3600));
 	    $this->params = $config->getDbInformations();
 	}
 

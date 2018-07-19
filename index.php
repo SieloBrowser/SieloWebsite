@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/Autoloader.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Core/autoloader.php';
 
 session_start();
 

@@ -23,19 +23,15 @@ class IniFile extends File
     {
         if($this->fileExists())
         {
-            if(isset($this->keys))
+            if($this->keyExists($keyName))
             {
-                if($this->keyExists($keyName))
-                {
-                    return $this->keys[$keyName];
-                }
+                return $this->keys[$keyName];
             } else {
-                $this->init();
-                $this->getKey($keyName);
+                return false;
             }
         } else {
             $this->createFile();
-            $this->getKey($keyName);
+            return false;
         }
     }
 
@@ -43,23 +39,17 @@ class IniFile extends File
     {
         if($this->fileExists())
         {
-            if(isset($this->keys))
+            if(!$this->keyExists($keyName))
             {
-                if(!$this->keyExists($keyName))
+                $this->keys[$keyName] = $value;
+                $content = '';
+                foreach ($this->keys as $key => $value)
                 {
-                    $this->keys[$keyName] = $value;
-                    $content = '';
-                    foreach ($this->keys as $key => $value)
-                    {
-                        $content .= $key.'='.$value."\n";
-                    }
-                    file_put_contents($this->filePath, $content);
-                } else {
-                    throw new FileException('[Fine: ini] => addKey: key '.$keyName.' already exists, if u want to modify it use the alterKey function');
+                    $content .= $key.'='.$value."\n";
                 }
+                file_put_contents($this->filePath, $content);
             } else {
-                $this->init();
-                $this->addKey($keyName, $value, $quote);
+                throw new FileException('[Fine: ini] => addKey: key '.$keyName.' already exists, if u want to modify it use the alterKey function');
             }
         } else {
             $this->createFile();
@@ -71,23 +61,17 @@ class IniFile extends File
     {
         if($this->fileExists())
         {
-            if(isset($this->keys))
+            if($this->keyExists($keyName))
             {
-                if($this->keyExists($keyName))
+                $this->keys[$keyName] = $value;
+                $content = '';
+                foreach ($this->keys as $key => $value)
                 {
-                    $this->keys[$keyName] = $value;
-                    $content = '';
-                    foreach ($this->keys as $key => $value)
-                    {
-                        $content .= $key.'='.$value."\n";
-                    }
-                    file_put_contents($this->filePath, $content);
-                } else {
-                    throw new FileException('[Fine: ini] => addKey: key '.$keyName.' don\'t exist');
+                    $content .= $key.'='.$value."\n";
                 }
+                file_put_contents($this->filePath, $content);
             } else {
-                $this->init();
-                $this->alterKey($keyName, $value, $quote);
+                return false;
             }
         } else {
             $this->createFile();

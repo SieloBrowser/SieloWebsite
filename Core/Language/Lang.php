@@ -23,7 +23,7 @@ class Lang
         $this->basePart = $basePart;
         if(!is_null($basePart))
         {
-            $this->files['default'] = ["file" => fopen($_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.$basePart.'/Langs/'.$lang.'/default.ini', 'r'), "use" => true];
+            $this->files['default'] = ["file" => new IniFile($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.SITE_PATH.DIRECTORY_SEPARATOR.APPLICATION_PATH.DIRECTORY_SEPARATOR.$basePart.DIRECTORY_SEPARATOR.'Langs'.DIRECTORY_SEPARATOR.$lang.DIRECTORY_SEPARATOR.'default.ini'), "use" => true];
         }
     }
 
@@ -31,10 +31,10 @@ class Lang
     {
         if(!is_null($this->basePart))
         {
-            $filePath = $_SERVER['DOCUMENT_ROOT'].'/Sielo/Application/'.((isset($part)) ? $part : $this->basePart).'/Langs/'.$this->lang.'/'.$fileName.'.ini';
+            $filePath = $_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.SITE_PATH.DIRECTORY_SEPARATOR.APPLICATION_PATH.DIRECTORY_SEPARATOR.((isset($part)) ? $part.DIRECTORY_SEPARATOR : (isset($this->basePart) ? $this->basePart.DIRECTORY_SEPARATOR : '' )).'Langs'.DIRECTORY_SEPARATOR.$this->lang.DIRECTORY_SEPARATOR.$fileName.'.ini';
             if(file_exists($filePath))
             {
-                $this->files[$fileName] = ["file" => fopen($filePath, 'r'), "use" => true];
+                $this->files[$fileName] = ["file" => new IniFile($filePath), "use" => true];
             } else {
                 throw new LangException('[Lang] {addFile} => file given: '.$fileName.' doesn\'t exists');
             }
@@ -65,27 +65,17 @@ class Lang
 
     public function getKey($keyName)
     {
-        foreach ($this->files as $file)
+        foreach ($this->files as $key => $file)
         {
             if($file['use'] === true)
             {
-                $file = $file['file'];
-                while(($buffer = fgets($file)) !== false)
+                $value = $file['file']->getKey($keyName);
+                if($value !== false)
                 {
-                    $currentKey = substr($buffer, 0, strpos($buffer, '='));
-                    if(strpos($buffer, $keyName) !== false && $keyName === $currentKey)
-                    {
-                        $start = strpos($buffer, '=');
-                        $start++;
-                        $value = substr($buffer, $start, strlen($buffer));
-
-                        return $value;
-                    }
+                    return $value;
                 }
             }
-            fseek($file, 0);
         }
-        return false;
     }
 
     private function fileExists(string $fileName)

@@ -16,7 +16,9 @@ class Cookie
     {
         if(!self::cookieExists($name))
         {
-            setcookie($name, $value, time()+$expiration || Config::getInstance()->getCookieExpirationTime(), $path);
+            $machin = (isset($expiration)) ? $expiration : Config::getInstance()->getCookieExpirationTime();
+            echo $machin;
+            var_dump(setcookie($name, $value, time()+$machin, $path));
         }
     }
 
@@ -28,7 +30,9 @@ class Cookie
     public static function getCookie($name)
     {
         if(self::cookieExists($name))
+        {
             return $_COOKIE[$name];
+        }
     }
 
     public static function cookieExists($name)

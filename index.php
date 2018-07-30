@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Sielo/Core/autoloader.php';
 
 session_start();
 
-$router = new \Core\UrlRouter\Router((isset($_GET['url']) ? $_GET['url'] : '');
+$router = new \Core\UrlRouter\Router((isset($_GET['url']) ? $_GET['url'] : ''));
 
 /*
  * Home
